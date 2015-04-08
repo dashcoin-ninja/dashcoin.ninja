@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Cryptosphere Systems">
+
+    <title>DASHCOIN.NINJA</title>
+
+    <!--
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/css/google-font-lato.css">
+    -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,400">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="/static/css/main.css?20150217">
+    
+    <link rel="icon" type="image/ico" href="/static/img/favicon.ico">
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll" width="50%">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#dshninja-navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img class="visible-md visible-lg" src="/static/img/dshninja-simple-logo.png">
+                <img class="visible-xs visible-sm" src="/static/img/dshninja-simple-logo-mobile.png">
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="dshninja-navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="page-scroll hidden active">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll" id="menu-item-create">
+                        <a href="#create">Create</a>
+                    </li>
+                    <li class="page-scroll" id="menu-item-track">
+                        <a href="#track">Track</a>
+                    </li>
+                    <li class="page-scroll" id="menu-item-faq">
+                        <a href="#faq">FAQ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+        </div>
+    </header>
+
+    <!-- Offline Section -->
+    <section class="striped-row-odd" id="offline">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6 text-center">
+                    <h3>DASHCOIN.NINJA is currently not available</h3>
+                    <p>
+                      Sorry about that. We will accept new orders once
+                      we are available again, come back soon!
+                    </p>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Create Section -->
+    <section class="striped-row-odd" id="create">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 text-center">
+                    <h1>Create a new order</h1>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <form role="form" id="order-form">
+                        <div class="row" id="current-price-info">
+                            <div class="visible-md visible-lg">
+                                <div class="col-sm-4 text-center">
+                                    Current rate 
+                                </div>
+                                <div class="col-lg-5">
+                                    <div class="well text-center data-current-price-btc-dsh" id="current-price-btc-dsh">
+                                    </div>
+                                </div>
+                                <div class="col-sm-3 text-center">
+                                    BTC/DSH
+                                </div>
+                            </div>
+                            <div class="visible-xs visible-sm">
+                                <div class="col-lg-6 text-center">
+                                    Current rate BTC/DSH
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="well text-center data-current-price-btc-dsh" id="current-price-btc-dsh">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 help-block with-errors dshninja-highlight" id="create-order-message">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 form-group">
+                                <input type="text" class="form-control" id="input-btc-dest-address" placeholder="Enter Bitcoin destination address" aria-label="Bitcoin destionation address" type="text" value="" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4 form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">min</span>
+                                    <input type="text" class="form-control text-right" id="data-min-order-amount-btc" value="…" readonly>
+                                    <span class="input-group-addon">BTC</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon">max</span>
+                                    <input type="text" class="form-control text-right" id="data-max-order-amount-btc" value="…" readonly>
+                                    <span class="input-group-addon">BTC</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-8 form-group">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="input-btc-amount" placeholder="Enter amount in bitcoin" aria-label="Amount in bitcoin" type="number" required>
+                                    <span class="input-group-addon">BTC</span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 form-group text-right">
+                                <button type="button" class="btn btn-outline" onclick="website.createOrderButtonHandler();">Create</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </section>
+    
+    <!-- track Section -->
+    <section class="striped-row-odd" id="track">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 text-center">
+                    <h1>Track an order</h1>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <p>Already created an order? Enter your secret key to see its status.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 help-block with-errors dshninja-highlight" id="track-order-message">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <form role="form" id="track-form">
+                            <div class="col-lg-8 form-group">
+                              <input type="text" class="form-control" id="input-order-secret-key" placeholder="Enter your order's secret key" aria-label="Bitcoin destionation address" type="text">
+                            </div>
+                            <div class="col-lg-4 text-right">
+                              <button type="button" class="btn btn-outline" onclick="website.trackOrderButtonHandler();">Track</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- status Section -->
+    <section class="striped-row-odd" id="status">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 text-center">
+                    <h1>Track your order status</h1>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3>Your secret key</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-5 well text-center" id="data-order-secret-key">
+                            Updating… 
+                        </div>
+                        <div class="col-lg-6 dshninja-highlight" id="secret-key-message">
+                            Important: save the secret key, using it
+                            you can track your order.
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3>Order summary</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-11 order-summary">
+                            <p>
+                                Send <span class="data-btc-amount"></span> BTC to 
+                                <span class="data-btc-dest-address"></span>.
+                            </p>
+                            <p id="order-summary-dsh">
+                                This order amounts to <span id="data-dsh-total-amount"></span> DSH
+                                at a rate of <span id="data-dsh-price-btc"></span> BTC/DSH.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h3>Current status</h3>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-1"></div>
+                        <div class="col-lg-11">
+                            <!-- -------------------------------- -->
+                            <div class="row order-current-status" id="order-current-status-updating">
+                                <p>
+                                Updating… please wait.
+                                </p>
+                            </div>
+                            <!-- -------------------------------- -->
+                            <div class="row order-current-status" id="order-current-status-waiting-create">
+                                <p>
+                                Creating order… please wait.
+                                </p>
+                            </div>
+                            <!-- -------------------------------- -->
+                            <div class="row order-current-status" id="order-current-status-waiting-dsh">
+                                <div id="partial-payment">
+                                    We received a partial payment. Please send the remaining amount.
+                                    Note that the payment information below has been adapted for 
+                                    your convenience.
+                                </div>
+
+                                <div id="payment-countdown">
+                                  <div class="warning-red">
+                                    Warning: sending DSH directly from an exchange such as Poloniex
+                                    might take too long!
+                                  </div>
+                                  <p>
+                                    We recommend using simplewallet.
+                                  </p>
+                                  <p>
+                                    Please pay your order in the next:
+                                  </p>
+                                  <div id="countdown-holder"></div>
+                                  <div class="warning-red" id="little-time-remaining">
+                                    Little time left! We don't recommend sending your transaction
+                                    now. Instead, create a new order.
+                                  </div>
+
+                                </div>
+
+                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingOne">
+                                            <h4 class="panel-title">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                Payment information
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="panel-body">
+                                                Address to send DSH to:
+                                                <div class="well" id="data-dsh-receiving-address"></div>
+                                                DSH amount to send:
+                                                <div class="well" id="data-dsh-amount-remaining"></div>
+                                                Payment ID to include:
+                                                <div class="well" id="data-dsh-required-payment-id"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingTwo">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                Simplewallet
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                            <div class="panel-body">
+                                                Copy the line below into simplewallet to pay this order:
+                                                <div class="well" id="data-simplewallet"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading" role="tab" id="headingThree">
+                                            <h4 class="panel-title">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                QR-Code
+                                                </a>
+                                            </h4>
+                                        </div>
+                                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                            <div class="panel-body">
+                                                Scan the code below with your preferred wallet software:
+                                                <img src="#" id="order-qr-code">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- -------------------------------- -->
+                            <div class="row order-current-status" id="order-current-status-dsh-received">
+                                <p>
+                                Thank you, we received your DSH payment.
+                                We are waiting for 
+                                <span class="dshninja-highlight" id="data-dsh-num-confirmations-remaining"></span> 
+                                additional confirmations before we will send your bitcoin payment.
+                                </p>
+                            </div>
+                            <!-- -------------------------------- -->
+                            <div class="row order-current-status" id="order-current-status-sending-btc">
+                                <p>
+                                Sending your bitcoin payment…
+                                </p>
+                            </div>
+                            <!-- -------------------------------- -->
+                            <div class="row order-current-status" id="order-current-status-btc-sent">
+                                <p>
+                                Your bitcoins have been sent.
+                                Transaction ID of your payment:
+                                </p>
+                                <div class="well" id="data-btc-transaction-id">
+                                </div>
+                                <p>
+                                This transaction has currently  
+                                <span class="dshninja-highlight" id="data-btc-num-confirmations"></span> confirmations.
+                                Note that all information about your order will purged from our system after
+                                <span class="dshninja-highlight" id="data-btc-num-confirmations-before-purge"></span>
+                                additional confirmations.
+                                </p>
+                            </div>
+                            <!-- -------------------------------- -->
+                            <div class="row order-current-status" id="order-current-status-timeout">
+                                <p>
+                                This order timed out before we received a payment. If you still want
+                                to send bitcoins, just create a new order!
+                                </p>
+                                
+                                <p>
+                                If you already sent some DSH, contact <a href="mailto:support@dashcoin.ninja">support</a>,
+                                supplying the secret key of your order and the payment ID.
+                                </p>
+                            </div>
+                            <!-- -------------------------------- -->
+                            <div class="row order-current-status" id="order-current-status-unavailable">
+                                <p>
+                                Could not contact our API. Either our
+                                service or the network might be
+                                down. Please check again later.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row form-group text-right" id="stop-order-tracking-block">
+                        <form role="form" id="track-form">
+                            <button type="button" class="btn btn-outline" onclick="website.stopOrderTrackingButtonHandler();">Stop tracking this order</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FAQ Section -->
+    <section class="striped-row-even" id="faq">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2"></div>
+                <div class="col-lg-8 text-center">
+                    <h1>FAQ</h1>
+                </div>
+                <div class="col-lg-2"></div>
+            </div>
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6 textbox">
+                    <h3>What is DASHCOIN.NINJA?</h3>
+                    <p>
+                      In a nutshell, you send us dashcoins and we make
+                      your bitcoin payment.
+                    </p>
+                    <p>
+                      DASHCOIN.NINJA allows you to make a Bitcoin payment
+                      with the strong anonymity provided
+                      by <a href="//dashcoin.info/">Dashcoin</a>.  
+                      This means that using Dashcoin together with
+                      DASHCOIN.NINJA, you can pay any Bitcoin address in the
+                      world, anonymously.
+                    </p>
+
+                    <h3>How does it work? (short version)</h3>
+                    <p>
+                        <ol>
+                            <li>Enter the Bitcoin address you want to pay, and the 
+                            amount you want to send. Hit the "Create" button.</li>
+                            <li>We tell you how many dashcoins you need to send us.</li>
+                            <li>Once we receive the dashcoins you send us, we immediately 
+                            make your requested bitcoin payment.</li>
+                        </ol>
+                    </p>
+
+                    <h3>How does it work? (long version)</h3>
+                    <p>
+                        <ol>
+                            <li>Create a new order: just enter the
+                            Bitcoin address you want to pay, and the
+                            precise amount you want to send there.</li>
+                            <li>We set up an order for you. An order is the contract
+                                between you and DASHCOIN.NINJA, which states that if we receive 
+                                a specific number of dashcoins from you, we will make a 
+                                specific Bitcoin payment on your behalf.
+                                <ul>
+                                    <li>Send the amount of dashcoins (DSH) specified in the order
+                                    to the indicated address, using the payment ID we give you.</li>
+                                    <li>Please take note of your order secret key that we give
+                                    you (a unique identifier, 12 characters long, that starts
+                                    with '<i>dshninja-…</i>').
+                                    If you want to track the status of your
+                                    order later, you will need this secret key.</li>
+                                    <li>Your order is only valid for 5 minutes (after which time the
+                                    exchange rate we quote in the order is out of date).  You
+                                    will need to send us the requested amount of dashcoins
+                                    within this time window, or we won't be able to process the
+                                    order. Note that we only need to see the unconfirmed
+                                    transaction on the p2p network within this time window,
+                                    confirmation by miners can come later.
+                                    </li>
+                                    <li>Don't forget the payment ID when you make the dashcoin payment,
+                                    or we won't be able to process your payment!</li>
+                                </ul>
+                            </li>
+                            <li>Once we get your Dashcoin payment, we wait for it to be
+                                confirmed (typically around one minute), and then
+                                immediately send your requested amount of bitcoins to the
+                                Bitcoin address that you chose.</li>
+                        </ol>
+                    </p>
+
+                    <h3>Are there any hidden costs?</h3>
+                    <p>
+                    No. The BTC/DSH exchange rate that you are quoted determines
+                    the exact number of dashcoins you need to send us in order to
+                    have your Bitcoin payment fulfilled.
+                    </p>
+
+                    <h3>How anonymous is DASHCOIN.NINJA?</h3>
+                    <p>
+                        Dashcoin payments are anonymous. To be fully
+                        precise: given the current state of the art in
+                        cryptography, your privacy is provably
+                        enforced at the mathematical level. Dashcoin
+                        allows to make payment over the internet with
+                        the strongest privacy currently achievable by
+                        cryptocurrencies. That is what we mean by
+                        anonymous.  Thus no-one (including us) can
+                        link you to the payment you send us.
+                    </p>
+                    <p>
+                        The only other link to us is your IP address
+                        (from which you are visiting this webpage
+                        right now), which you should hide when you
+                        wish to be fully anonymous (see best practices
+                        below).
+                    </p>
+                    <p>
+                        As bitcoin payments are public, payments we
+                        make on your behalf will be visible on the
+                        (transparent) bitcoin blockchain. However,
+                        thanks to the intrinsic properties of Dashcoin,
+                        no-one can associate that payment with you.
+                    </p>
+
+
+                    <h3>What are the best practices for privacy?</h3>
+                    <p>
+                        <ul>
+                            <li>Use <a href="https://www.torproject.org/">TOR</a> or <a href="https://geti2p.net/">I2P</a> 
+                            to hide your IP address!</li>
+                            <li>Be sure to set a sufficient <i>mixin</i> when
+                            sending your Dashcoin payment – we generally
+                            recommend 3 or higher.</li>
+                        </ul>
+                    </p>
+
+
+                    <h3>Other questions? Problems?</h3>
+                    <p>
+                    Contact us: <a href="mailto: support@dashcoin.ninja">support@dashcoin.ninja</a>
+                    </p>
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer class="text-center" id="pagefooter">
+        <div class="footer-above">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col col-md-3">
+                        <p class="small"></p>
+                    </div>
+
+                    <div class="footer-col col-md-6">
+                        <p class="small">
+                        <h4>Contact</h4>
+                        Issues/feedback:<br><a href="mailto: support@dashcoin.ninja">support@dashcoin.ninja</a>
+                        <!--<br>
+                        Need our PGP key? Click <a href="#">here</a>-->
+                        </p>
+                    </div>
+
+                    <div class="footer-col col-md-3">
+                        <h4>Stay in touch</h4>
+                        <ul class="list-inline">
+<!--
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+                            </li>
+-->
+                            <li>
+                                <a href="//twitter.com/dashcoin_ninja" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="footer-below">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Copyright © Dashcoin.ninja 2015
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+    <div class="scroll-top page-scroll visible-xs visible-sm">
+        <a class="btn btn-primary" href="#page-top">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+    </div>
+
+    <!--
+    <script src="/static/js/jquery-2.1.3.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery-ui.min.js"></script>
+    -->
+    <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="/static/js/animated-header.js"></script>
+    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.min.js"></script>
+    <script src="/static/js/countdown.js"></script>
+
+    <script src="/static/js/main.js?20150217"></script>
+
+</body></html>
